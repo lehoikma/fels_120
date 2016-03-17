@@ -26,7 +26,7 @@ class AdminController extends Controller
         if (User::createUser($request)) {
             return redirect()->action('AdminController@getListUser');
         }
-        return redirect()->action('AdminController@getCreateUser', ['messages'=>trans('user/messages.create_user_failed')]);
+        return redirect()->action('AdminController@getCreateUser', ['messages' => trans('user/messages.create_user_failed')]);
     }
 
     public function getListUser()
@@ -49,7 +49,7 @@ class AdminController extends Controller
         if (User::editUser($id, $request)) {
             return redirect()->action('AdminController@getListUser');
         }
-        return redirect()->action('AdminController@getCreateUser', ['messages'=>trans('user/messages.edit_user_failed')]);
+        return redirect()->action('AdminController@getCreateUser', ['messages' => trans('user/messages.edit_user_failed')]);
     }
 
     public function getDeleteUser($id)
@@ -57,7 +57,7 @@ class AdminController extends Controller
         if (User::deleteUser($id)) {
             return redirect()->action('AdminController@getListUser');
         }
-        return redirect()->action('AdminController@getCreateUser', ['messages'=>trans('user/messages.delete_user_failed')]);
+        return redirect()->action('AdminController@getCreateUser', ['messages' => trans('user/messages.delete_user_failed')]);
     }
 
     public function getLogout()

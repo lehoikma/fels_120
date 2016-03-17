@@ -31,7 +31,7 @@
                     {{ csrf_field() }}
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="text" class="form-control" name="email" value="" placeholder="Email">
+                        <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                     </div>
 
                     <div class="input-group">
