@@ -50,7 +50,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{asset('admin/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ action('AdminController@getLogout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -79,10 +79,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Category</a>
+                                    <a href="{{ action('CategoryController@getList') }}">List Category</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Category</a>
+                                    <a href="{{ action('CategoryController@getCreate') }}">Add Category</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -103,10 +103,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{asset('admin/list-user')}}">List User</a>
+                                    <a href="{{ action('AdminController@getListUser') }}">List User</a>
                                 </li>
                                 <li>
-                                    <a href="{{asset('admin/create-user')}}">Add User</a>
+                                    <a href="{{ action('AdminController@getCreateUser') }}">Add User</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -44,6 +44,6 @@ class UserController extends Controller
         if (User::registerUser($request)) {
             return redirect()->action('UserController@getLogin');
         }
-        return redirect()->action('UserController@getRegister', ['messages'=>trans('user/messages.regiter_user_failed')]);
+        return redirect()->action('UserController@getRegister', ['messages' => trans('user/messages.regiter_user_failed')]);
     }
 }

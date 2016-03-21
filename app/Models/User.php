@@ -23,44 +23,45 @@ class User extends Authenticatable
     public static function createUser($request)
     {
         $userCreateInput = $request->only('name', 'email', 'password', 'role');
-        $addUser = new User;
-        $addUser->name = $userCreateInput['name'];
-        $addUser->email = $userCreateInput['email'];
-        $addUser->password = $userCreateInput['password'];
-        $addUser->role = $userCreateInput['role'];
-        return $addUser->save();
+        $newUser = new User;
+        $newUser->name = $userCreateInput['name'];
+        $newUser->email = $userCreateInput['email'];
+        $newUser->password = $userCreateInput['password'];
+        $newUser->role = $userCreateInput['role'];
+        return $newUser->save();
     }
 
     public static function editUser($id, $request)
     {
-        $getUser = $request->all();
-        $name = $getUser['name'];
-        $pass = $getUser['password'];
-        $editUser = new User();
-        $getUserbyId = $editUser->find($id);
-        if (empty($getUserbyId)) {
+        $listUser = $request->all();
+        $name = $listUser['name'];
+        $pass = $listUser['password'];
+        $newUser = new User();
+        $listUserbyId = $newUser->find($id);
+        if (empty($listUserbyId)) {
             return false;
         }
-        $getUserbyId->name = $name;
-        $getUserbyId->password = $pass;
-        return $getUserbyId->save();
+        $listUserbyId->name = $name;
+        $listUserbyId->password = $pass;
+        return $listUserbyId->save();
     }
 
     public static function registerUser($request)
     {
         $pass = $request->input('password');
         $email = $request->input('email');
-        $register = new User;
-        $register->password = $pass;
-        $register->email = $email;
-        $register->role = User::ROLE_MEMBER;
-        return $register->save();
+        $newUser = new User;
+        $newUser->password = $pass;
+        $newUser->email = $email;
+        $newUser->role = User::ROLE_MEMBER;
+        return $newUser->save();
     }
+
     public static function deleteUser($id)
     {
         $deleteUser = User::find($id);
         if (empty($deleteUser)) {
-            return redirect()->action('UserController@getLogin');
+            return false;
         }
         return $deleteUser->delete();
     }

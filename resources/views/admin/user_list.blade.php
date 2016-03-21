@@ -1,5 +1,5 @@
 @extends('layout.layout-admin')
-@section('title', trans('user/titles.listUser'));
+@section('title', trans('user/titles.listUser'))
 @section('content')
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -29,8 +29,8 @@
                     {{ 'Member' }}
                 @endif
             </td>
-            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ URL::Route('edit-user', $value['id']) }}">Edit</a></td>
-            <td class="center"><i class="btn-delete fa fa-trash-o  fa-fw"></i><a href="{{ URL::Route('delete-user', $value['id']) }}"> Delete</a></td>
+            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ action('AdminController@getEditUser', $value['id']) }}">Edit</a></td>
+            <td class="center"><i class="btn-delete fa fa-trash-o  fa-fw"></i><a href="{{ action('AdminController@getDeleteUser', $value['id']) }}"> Delete</a></td>
         </tr>
             @endforeach
         </tbody>
