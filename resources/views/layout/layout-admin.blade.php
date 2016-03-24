@@ -16,10 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('admin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- Custom Fonts -->
     <link href="{{ asset('admin/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
@@ -29,12 +28,12 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">{{ trans('text.toggleNavigation') }}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Admin - Framgia</a>
+                <a class="navbar-brand" href="#">{{ trans('text.adminFramgia') }}</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -45,12 +44,10 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('text.userProfile') }}</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{ action('AdminController@getLogout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ action('AdminController@getLogout') }}"><i class="fa fa-sign-out fa-fw"></i>{{ trans('text.logout') }}</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -61,40 +58,29 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <!-- /input-group -->
+                        <li>
+                            <a href="#"><i class="fa fa-dashboard fa-fw"></i>{{ trans('text.dashboard') }}</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>{{ trans('labels.category') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ action('CategoryController@getList') }}">List Category</a>
+                                    <a href="{{ action('CategoryController@getList') }}">{{ trans('category/titles.listCategory') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ action('CategoryController@getCreate') }}">Add Category</a>
+                                    <a href="{{ action('CategoryController@getCreate') }}">{{ trans('category/titles.addCategory') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Word<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i>{{ trans('text.word') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Word</a>
+                                    <a href="{{ action('WordController@getList') }}">{{ trans('word/titles.listWord') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Word</a>
+                                    <a href="{{ action('WordController@getCreate') }}">{{ trans('word/titles.addWord') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -103,10 +89,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ action('AdminController@getListUser') }}">List User</a>
+                                    <a href="{{ action('AdminController@getListUser') }}">{{ trans('user/titles.listUser') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ action('AdminController@getCreateUser') }}">Add User</a>
+                                    <a href="{{ action('AdminController@getCreateUser') }}">{{ trans('user/titles.addUser') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

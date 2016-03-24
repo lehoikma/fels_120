@@ -10,11 +10,11 @@
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
         <tr align="center">
-            <th>Username</th>
-            <th>Email</th>
-            <th>Level</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th> {{ trans('labels.name') }}</th>
+            <th>{{ trans('labels.email') }}</th>
+            <th>{{ trans('labels.level') }}</th>
+            <th>{{ trans('text.edit') }}</th>
+            <th>{{ trans('text.delete') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -24,13 +24,13 @@
             <td>{{ $value['email'] }}</td>
             <td>
                 @if ($value['role'] == 1)
-                    {{ 'Admin' }}
+                    {{ trans('text.admin') }}
                 @else
-                    {{ 'Member' }}
+                    {{ trans('text.member') }}
                 @endif
             </td>
-            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ action('AdminController@getEditUser', $value['id']) }}">Edit</a></td>
-            <td class="center"><i class="btn-delete fa fa-trash-o  fa-fw"></i><a href="{{ action('AdminController@getDeleteUser', $value['id']) }}"> Delete</a></td>
+            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ action('AdminController@getEditUser', $value['id']) }}">{{ trans('text.edit') }}</a></td>
+            <td class="center"><i class="btn-delete fa fa-trash-o  fa-fw"></i><a href="{{ action('AdminController@getDeleteUser', $value['id']) }}"> {{ trans('text.delete') }}</a></td>
         </tr>
             @endforeach
         </tbody>

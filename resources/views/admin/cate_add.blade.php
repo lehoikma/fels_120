@@ -1,9 +1,9 @@
 @extends('layout.layout-admin' )
-@section('title', trans('category/titles.addCate'))
+@section('title', trans('category/titles.addCategory'))
 @section('content')
     <div class="col-lg-12">
         <h1 class="page-header">
-            {{ trans('category/titles.addCate') }}
+            {{ trans('category/titles.addCategory') }}
         </h1>
     </div>
     <!-- /.col-lg-12 -->
@@ -25,22 +25,22 @@
         <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class = "form-group">
-                <label>Category Name</label>
-                <input class="form-control" name="name" placeholder="Please Enter Name Category" value = "{{ old('name') }}"/>
+                <label>{{ trans('labels.categoryName') }}</label>
+                <input class="form-control" name="name" placeholder="{{ trans('labels.pleaseEnterNameCategory') }}" value = "{{ old('name') }}"/>
             </div>
             <div class = "form-group">
-                <label>Category Description</label>
+                <label>{{ trans('labels.categoryDescription') }}</label>
                 <textarea class="form-control" rows="4" name="description"> {{ old('description') }} </textarea>
             </div>
             <div class = "form-group">
-                <label>Number of word in lesson</label>
+                <label>{{ trans('labels.numberOfWordInLesson') }}</label>
                 <input class = "form-control" name = "number" value = "{{ old('number') }}" />
             </div>
             <div class="form-group">
-                <label>Images</label>
+                <label>{{ trans('labels.image') }}</label>
                 <input type="file" name="images">
             </div>
-            <button type="submit" class="btn btn-default">Category Add</button>
+            <button type="submit" class="btn btn-default">{{ trans('category/titles.addCategory') }}</button>
         </form>
     </div>
 @endsection

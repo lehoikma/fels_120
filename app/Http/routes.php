@@ -36,4 +36,5 @@ Route::group(['prefix' => '/admin', 'middleware' => ['web', 'auth', 'role:'.App\
     Route::get('/index', 'AdminController@getIndex');
     Route::controller('/user', 'AdminController');
     Route::controller('/category', 'CategoryController');
+    Route::controller('/word', 'WordController');
 });
