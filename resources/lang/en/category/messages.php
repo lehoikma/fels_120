@@ -6,6 +6,5 @@ return [
     'delete_category_failed' => 'Xóa category thất bại',
     'move_folder_failed' => 'Không thể lưu ảnh vào folder',
     'image_failed' => 'Lỗi hình ảnh',
-
 ];
 

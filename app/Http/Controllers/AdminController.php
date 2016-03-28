@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserEditRequest;
 use App\Models\User;
+use Session;
 use Auth;
 
 class AdminController extends Controller

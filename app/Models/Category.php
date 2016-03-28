@@ -8,22 +8,28 @@ class Category extends Model
 {
     protected $table = 'categories';
 
+    public function words()
+    {
+        return $this->hasMany(Word::class);
+    }
+
     public static function createCategory($request)
     {
-            $path = public_path('uploads/category');
-            $imageData = $request->file('images');
-            $imageName = time() . "." . $imageData->getClientOriginalExtension();
-            $uploadImage = $imageData->move($path, $imageName);
-            if (empty($uploadImage)) {
-                throw new Exception(trans('category/messages.move_folder_failed'));
-            }
-            $categoryCreateInput = $request->only('name', 'description', 'number');
-            $newCategory = new Category;
-            $newCategory->name = $categoryCreateInput['name'];
-            $newCategory->image = $imageName;
-            $newCategory->description = $categoryCreateInput['description'];
-            $newCategory->number_of_word_lesson = $categoryCreateInput['number'];
-            return $newCategory->save();
+        $config = config('common.category');
+        $path = public_path($config['path_uploadImage']);
+        $imageData = $request->file('images');
+        $imageName = time() . "." . $imageData->getClientOriginalExtension();
+        $uploadImage = $imageData->move($path, $imageName);
+        if (empty($uploadImage)) {
+            throw new Exception(trans('category/messages.move_folder_failed'));
+        }
+        $categoryCreateInput = $request->only('name', 'description', 'number');
+        $newCategory = new Category;
+        $newCategory->name = $categoryCreateInput['name'];
+        $newCategory->image = $imageName;
+        $newCategory->description = $categoryCreateInput['description'];
+        $newCategory->number_of_word_lesson = $categoryCreateInput['number'];
+        return $newCategory->save();
     }
 
     public static function editCategory($id, $request)
@@ -32,8 +38,7 @@ class Category extends Model
         $name = $listCate['name'];
         $description = $listCate['description'];
         $number = $listCate['number'];
-        $newCategory = new Category();
-        $listCatebyId = $newCategory->find($id);
+        $listCatebyId = Category::find($id);
         if (empty($listCatebyId)) {
             return false;
         }
@@ -51,4 +56,5 @@ class Category extends Model
         }
         return $deleteCate->delete();
     }
+
 }

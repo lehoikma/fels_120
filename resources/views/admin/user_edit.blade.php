@@ -29,23 +29,23 @@
                 <input type="email" class="form-control" name="email" value="{{ $editUserId['email'] }}" disabled />
             </div>
             <div class="form-group">
-                <label>Name</label>
+                <label>{{ trans('labels.name') }}</label>
                 <input type="text" class="form-control" value="{{ $editUserId['name'] }}" name="name" />
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Please Enter Password" value="{{ $editUserId['password'] }}"/>
+                <label>{{ trans('labels.password') }}</label>
+                <input type="password" class="form-control" name="password" placeholder="{{ trans('labels.pleaseEnterPassword') }}" value="{{ $editUserId['password'] }}"/>
             </div>
             <div class="form-group">
-                <label>User Level</label>
+                <label>{{ trans('labels.userLevel') }}</label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="1" type="radio">Admin
+                    <input name="rdoLevel" value="1" type="radio">{{ trans('text.admin') }}
                 </label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="2" checked="" type="radio">Member
+                    <input name="rdoLevel" value="2" checked="" type="radio">{{ trans('text.member') }}
                 </label>
             </div>
-            <button type="submit" class="btn btn-default">User Edit</button>
+            <button type="submit" class="btn btn-default">{{ trans('user/titles.editUser') }}</button>
             </form>
     </div>
 @endsection

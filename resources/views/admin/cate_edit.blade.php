@@ -1,9 +1,9 @@
 @extends('layout.layout-admin' )
-@section('title', trans('category/titles.editCate'))
+@section('title', trans('category/titles.editCategory'))
 @section('content')
     <div class="col-lg-12">
         <h1 class="page-header">
-            {{ trans('category/titles.editCate') }}
+            {{ trans('category/titles.editCategory') }}
         </h1>
     </div>
     <!-- /.col-lg-12 -->
@@ -25,22 +25,22 @@
         <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
-                <label>Category Name</label>
-                <input class="form-control" name="name" value="{{ $cateIdList['name'] }}" placeholder="Please Enter Name Category" />
+                <label>{{ trans('category/titles.categoryName') }}</label>
+                <input class="form-control" name="name" value="{{ $cateIdList['name'] }}" placeholder="{{ trans('text.pleaseEnterNameCategory') }}" />
             </div>
             <div class="form-group">
-                <label>Category Description</label>
+                <label>{{ trans('category/titles.categoryDescription') }}</label>
                 <textarea class="form-control" rows="4" name="description"> {{ $cateIdList['description'] }}</textarea>
             </div>
             <div class="form-group">
-                <label>Number of word in lesson</label>
+                <label>{{ trans('category/titles.numberOfWordInLesson') }}</label>
                 <input class="form-control" name="number" value="{{ $cateIdList['number_of_word_lesson'] }}"/>
             </div>
             <div class="form-group">
                 <label>Image</label>
                 <img src="{{ asset("/uploads/category/{$cateIdList['image']}") }}" width="200" height="200">
             </div>
-            <button type="submit" class="btn btn-default">Category Edit</button>
+            <button type="submit" class="btn btn-default">{{ trans('category/titles.editCategory') }}</button>
         </form>
     </div>
 @endsection

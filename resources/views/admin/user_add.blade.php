@@ -25,32 +25,32 @@
         <form action="" method="POST">
             {{ csrf_field() }}
             <div class = "form-group">
-                <label>Username</label>
-                <input class="form-control" name="name" placeholder="Please Enter Username" value="{{ old('name') }}"/>
+                <label>{{ trans('user/titles.username') }}</label>
+                <input class="form-control" name="name" placeholder="{{ trans('user/titles.pleaseEnterUsername') }}" value="{{ old('name') }}"/>
             </div>
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Please Enter Email" value="{{ old('email') }}"/>
+                <label>{{ trans('user/titles.email') }}</label>
+                <input type="email" class="form-control" name="email" placeholder="{{ trans('user/titles.pleaseEnterEmail') }}" value="{{ old('email') }}"/>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Please Enter Password" />
+                <label>{{ trans('user/titles.password') }}</label>
+                <input type="password" class="form-control" name="password" placeholder="{{ trans('user/titles.pleaseEnterPassword') }}" />
             </div>
             <div class="form-group">
-                <label>RePassword</label>
-                <input type="password" class="form-control" name="password_confirmation" placeholder="Please Enter RePassword" />
+                <label>{{ trans('user/titles.rePassword') }}</label>
+                <input type="password" class="form-control" name="password_confirmation" placeholder="{{ trans('user/titles.pleaseEnterRePassword') }}" />
             </div>
             <div class="form-group">
-                <label>User Level</label>
+                <label>{{ trans('user/titles.userLevel') }}</label>
                 <label class = "radio-inline">
-                    <input name="role" value="{{ App\Models\User::ROLE_MEMBER }}" type="radio">Admin
+                    <input name="role" value="{{ App\Models\User::ROLE_MEMBER }}" type="radio">{{ trans('text.admin') }}
                 </label>
                 <label class="radio-inline">
-                    <input name="role" value="{{ App\Models\User::ROLE_ADMIN }}" checked = "" type="radio">Member
+                    <input name="role" value="{{ App\Models\User::ROLE_ADMIN }}" checked = "" type="radio">{{ trans('text.member') }}
                 </label>
             </div>
-            <button type="submit" class="btn btn-default">User Add</button>
-            <button type="reset" class="btn btn-default">Reset</button>
+            <button type="submit" class="btn btn-default">{{ trans('user/titles.addUser') }}</button>
+            <button type="reset" class="btn btn-default">{{ trans('user/titles.reset') }}</button>
             </form>
     </div>
 @endsection

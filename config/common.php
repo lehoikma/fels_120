@@ -7,5 +7,6 @@ return [
     ],
     'category' => [
         'number_min' => 1,
+        'path_uploadImage' => 'uploads/category',
     ]
 ];
