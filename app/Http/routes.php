@@ -25,12 +25,12 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
-Route::group(['middleware' => ['web']], function() {
-    Route::controller('/user', 'UserController');
-});
 Route::group(['prefix' => '/user', 'middleware' => ['web', 'auth', 'role:'.App\Models\User::ROLE_MEMBER]], function () {
     Route::get('/index', 'UserController@getIndex');
+    Route::controller('/category', 'UserCategoryController');
+});
+Route::group(['middleware' => ['web']], function() {
+    Route::controller('/user', 'UserController');
 });
 Route::group(['prefix' => '/admin', 'middleware' => ['web', 'auth', 'role:'.App\Models\User::ROLE_ADMIN]], function () {
     Route::get('/index', 'AdminController@getIndex');
@@ -38,3 +38,4 @@ Route::group(['prefix' => '/admin', 'middleware' => ['web', 'auth', 'role:'.App\
     Route::controller('/category', 'CategoryController');
     Route::controller('/word', 'WordController');
 });
+
