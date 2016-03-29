@@ -8,5 +8,5 @@ return [
     'categoryName' => 'Category Name',
     'categoryDescription' => 'Category Description',
     'numberOfWordInLesson' => 'Number of word in lesson',
-
+    'category' => 'Category',
 ];

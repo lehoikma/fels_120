@@ -29,7 +29,7 @@ class WordAnswer extends Model
             if ($key == $correct[WordAnswer::KEY_CORRECT]) {
                $newWordAnswer->status = WordAnswer::STATUS_TRUE;
             }
-            $newWordAnswer->save();
+            return $newWordAnswer->save();
         }
     }
 }

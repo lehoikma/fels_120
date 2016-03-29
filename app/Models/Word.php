@@ -21,9 +21,7 @@ class Word extends Model
     public static function createWord($request)
     {
         $wordCreateInput = $request->only('category', 'content');
-
         $newWord = Word::create();
-
         $newWord->category_id = $wordCreateInput['category'];
         $newWord->content = $wordCreateInput['content'];
         $newWord->save();
