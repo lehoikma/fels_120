@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\UserLoginRequest;
@@ -45,5 +46,19 @@ class UserController extends Controller
             return redirect()->action('UserController@getLogin');
         }
         return redirect()->action('UserController@getRegister', ['messages' => trans('user/messages.regiter_user_failed')]);
+    }
+
+    public function getUpdateProfile()
+    {
+        $user = User::getCurrentUser();
+        return view('user.setting', compact('user'));
+    }
+
+    public function postUpdateProfile(UserUpdateRequest $request)
+    {
+        if (User::updateUser($request)) {
+            return redirect()->action('UserController@getIndex');
+        }
+        return redirect()->action('UserController@getUpdateProfile', ['messages' => trans('user/messages.edit_user_failed')]);
     }
 }

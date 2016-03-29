@@ -15,6 +15,26 @@ class User extends Authenticatable
 
     protected $hidden = ['password', 'remember_token'];
 
+    public function follows()
+    {
+        return $this->hasMany(Follow::class);
+    }
+
+    public function activies()
+    {
+        return $this->hasMany(Activies::class);
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
+    public function learnedWords()
+    {
+        return $this->hasMany(LearnedWord::class);
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
@@ -64,5 +84,18 @@ class User extends Authenticatable
             return false;
         }
         return $deleteUser->delete();
+    }
+    //Front End
+    public static function getCurrentUser()
+    {
+        $id = Auth::user()->id;
+        return User::find($id);
+    }
+
+    public static function updateUser($request)
+    {
+        $user = $request->all();
+        $id = $user['userId'];
+        return User::updateOrCreate(['id' => $id], $user);
     }
 }

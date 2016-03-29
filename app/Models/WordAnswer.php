@@ -14,7 +14,12 @@ class WordAnswer extends Model
 
     public function word()
     {
-        return WordAnswer::belongsTo('App\Models\Word');
+        return $this->belongsTo(Word::class);
+    }
+
+    public function lessonWords()
+    {
+        return $this->hasMany(LessonWord::class);
     }
 
     public static function createWordAnswer($request, $id)

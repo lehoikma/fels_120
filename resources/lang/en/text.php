@@ -22,4 +22,12 @@ return [
     'settings' => 'Settings',
     'youLearned' => 'You learned',
     'startLesson' => 'Start Lesson',
+    'password' => 'Password',
+    'retypePassword' => 'Retype Password',
+    'update' => 'Update',
+    'framgiaInc' => '© 2014 Framgia, Inc. All rights reserved.',
+    'tel' => 'Tel: 04 3795 5417',
+    'address' => '13F, KeangNam LandMark 72 Building, E6 Pham Hung, Tu Liem, HN',
+    'framgiaVietNam' => 'Framgia Viet Nam Co.,Ltd',
+    'filter' => 'Filter',
 ];
