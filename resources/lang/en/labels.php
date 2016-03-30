@@ -19,5 +19,8 @@ return [
     'content' => 'Content',
     'option' => 'Option',
     'image' => 'Images',
-
+    'learned' => 'Learned',
+    'all' => 'All',
+    'notLearned' => 'NotLearned',
+    'selectListCategory' => 'Select list Category:',
 ];

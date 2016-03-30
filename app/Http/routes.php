@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::group(['prefix' => '/user', 'middleware' => ['web', 'auth', 'role:'.App\Models\User::ROLE_MEMBER]], function () {
     Route::get('/index', 'UserController@getIndex');
     Route::controller('/category', 'UserCategoryController');
+    Route::controller('/word', 'UserWordController');
 });
 Route::group(['middleware' => ['web']], function() {
     Route::controller('/user', 'UserController');

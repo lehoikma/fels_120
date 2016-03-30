@@ -13,6 +13,11 @@ class Category extends Model
         return $this->hasMany(Word::class);
     }
 
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
     public static function createCategory($request)
     {
         $config = config('common.category');

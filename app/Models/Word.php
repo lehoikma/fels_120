@@ -18,6 +18,16 @@ class Word extends Model
         return $this->hasMany(WordAnswer::class);
     }
 
+    public function lessonWords()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
+    public function learnedWords()
+    {
+        return $this->hasMany(LearnedWord::class);
+    }
+
     public static function createWord($request)
     {
         $wordCreateInput = $request->only('category', 'content');
@@ -27,6 +37,7 @@ class Word extends Model
         $newWord->save();
         return $newWord->id;
     }
+
     public static function getWordById($id)
     {
         $word = Word::find($id);

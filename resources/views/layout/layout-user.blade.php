@@ -41,7 +41,7 @@
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href=""><i class="fa fa-user fa-fw"></i>{{ trans('text.userProfile') }}</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('text.settings') }}</a>
+                    <li><a href="{{ action('UserController@getUpdateProfile') }}"><i class="fa fa-gear fa-fw"></i>{{ trans('text.settings') }}</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="{{ action('AdminController@getLogout') }}"><i class="fa fa-sign-out fa-fw"></i>{{ trans('text.logout') }}</a>
@@ -52,7 +52,7 @@
         <ul class="menu" style="float:right;">
             <li><a href="{{ action('UserController@getIndex') }}">{{ trans('text.home') }}</a></li>
             <li><a href="{{ action('UserCategoryController@getList') }}">{{ trans('labels.category') }}</a></li>
-            <li><a href="#">{{ trans('text.wordList') }}</a></li>
+            <li><a href="{{ action('UserWordController@getList') }}">{{ trans('text.wordList') }}</a></li>
             <li><a href="#">{{ trans('text.contact') }}</a></li>
         </ul>
     </nav>
@@ -62,6 +62,15 @@
                 <p class="title-cate">@yield('title-content')</p>
             </div>
             @yield('content')
+        </div>
+        <div class="footer col-md-12">
+            <div id="footer-inner" style="text-align:center;background: #E6E6E6;">
+                <hr style="margin-top:0;">
+                <p class="pagination-centered">{{ trans('text.framgiaVietNam') }}<br>
+                    {{ trans('text.address') }}</p>
+                <p class="pagination-centered">{{ trans('text.tel') }}</p>
+                <p class="pagination-centered">{{ trans('text.framgiaInc') }}</p>
+            </div>
         </div>
     </div>
 </div>
