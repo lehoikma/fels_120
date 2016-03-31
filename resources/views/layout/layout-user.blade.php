@@ -53,7 +53,7 @@
             <li><a href="{{ action('UserController@getIndex') }}">{{ trans('text.home') }}</a></li>
             <li><a href="{{ action('UserCategoryController@getList') }}">{{ trans('labels.category') }}</a></li>
             <li><a href="{{ action('UserWordController@getList') }}">{{ trans('text.wordList') }}</a></li>
-            <li><a href="#">{{ trans('text.contact') }}</a></li>
+            <li><a href="{{ action('UserController@getList') }}">{{ trans('text.user') }}</a></li>
         </ul>
     </nav>
     <div id="grapper">

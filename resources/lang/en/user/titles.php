@@ -19,4 +19,6 @@ return [
     'pleaseEnterUsername' => 'Please Enter Username',
     'setting' => 'Setting',
     'updateYourProfile' => 'Update your profile',
+    'allUser' => 'All User',
+    'follow' => 'Follow',
 ];

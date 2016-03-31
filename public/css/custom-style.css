@@ -45,15 +45,62 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.menu li {float: left;text-align: center;width: 100px;}
-.menu {margin-top: 15px;}
-.title-cate {color: white;font-weight: bold; margin-top: 10px;text-transform: uppercase;text-align: center;}
-.title {margin: 15px;}
-.content-ct{margin-bottom: 10px;}
-.title-ca {font-weight: bold;font-size: 20px;}
-.image-cate img{width: 100%;margin-top: 20px; }
-.category-item{padding-bottom: 50px;}
-.content-home{text-align: center;margin-top: 10px;}
-.filter { margin: 20px;}
-.word-contentt{margin-bottom: 10px;}
-.change{margin-bottom: 30px;}
+.menu li {
+	float: left;
+	text-align: center;
+	width: 100px;
+}
+.menu {
+	margin-top: 15px;
+}
+.title-cate {
+	color: white;
+	font-weight: bold;
+	margin-top: 10px;
+	text-transform: uppercase;
+	text-align: center;}
+.title {
+	margin: 15px;
+}
+.content-ct {
+	margin-bottom: 10px;
+}
+.title-ca {
+	font-weight: bold;
+	font-size: 20px;
+}
+.image-cate img{
+	width: 100%;
+	margin-top: 20px;
+}
+.category-item {
+	padding-bottom: 50px;
+}
+.content-home {
+	text-align: center;
+	margin-top: 10px;
+}
+.filter {
+	margin: 20px;
+}
+.word-contentt {
+	margin-bottom: 10px;
+}
+.change {
+	margin-bottom: 30px;
+}
+.users li {
+	margin: 10px;
+}
+.users li a {
+	padding-bottom: 10px;
+}
+.follow {
+	margin: 20px;
+}
+.user_info {
+	margin:20px;
+}
+.unfollow {
+	margin-top: 20px;
+}
