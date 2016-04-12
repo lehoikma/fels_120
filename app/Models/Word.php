@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Word extends Model
 {
@@ -60,5 +61,14 @@ class Word extends Model
     {
         $deleteWord = Word::destroy($id);
         return $deleteWord;
+    }
+
+    public static function randomWord($id )
+    {
+        $config = config('common.lesson');
+        $words = Category::find($id)->words()
+            ->orderByRaw("RAND()")
+            ->take($config['take'])->get();
+        return $words;
     }
 }

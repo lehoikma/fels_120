@@ -35,4 +35,13 @@ return [
     'unfollow' => 'Unfollow',
     'follow' => 'Follow',
     'allUser' => 'All User',
+    'finish' => 'Finish',
+    'lesson' => 'Lesson',
+    'msgLesson' => 'Bạn phải nhập ít nhất 1 câu trả lời',
+    'lessonResult' => 'Lesson Result',
+    'true' => 'TRUE',
+    'false' => 'FALSE',
+    'wordAnswer' => 'WordAnswer',
+    'wordCorrect' => 'WordCorrect',
+    'wordResult' => 'WordResult',
 ];

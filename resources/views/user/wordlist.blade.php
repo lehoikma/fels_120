@@ -26,7 +26,6 @@
                     <div class="button col-md-1">
                         <button type="button" class="btn btn-primary">{{ trans('text.filter') }}</button>
                     </div>
-
                 </form>
             </div>
         </div>

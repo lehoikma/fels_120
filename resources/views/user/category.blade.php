@@ -15,12 +15,12 @@
                     <div class="title-ca1 col-md-8">{{ trans('text.youLearned') }} 20/50</div>
                 </div>
                 <div class="content-ct col-md-12">
-                    @foreach ($categoryAll['words'] as $value)
-                        {{ $value['content'] }}
+                    @foreach ($categoryAll['words'] as $category)
+                        {{ $category['content'] }}
                     @endforeach
                 </div>
                 <div class="click-button col-md-12">
-                    <button type="button" class="btn btn-primary">{{ trans('text.startLesson') }}</button>
+                    <a href="{{ action('LessonController@getCreate', $categoryAll['id']) }}" class="btn-lesson">{{ trans('text.startLesson') }}</a>
                 </div>
             </div>
             <div class="image-cate col-md-3">

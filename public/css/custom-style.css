@@ -104,3 +104,12 @@ table {
 .unfollow {
 	margin-top: 20px;
 }
+.btn-lesson {
+	background: blue;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+.click-button {
+	margin-top:10px;
+}

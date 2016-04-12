@@ -14,9 +14,9 @@ class CreateLessonWordsTable extends Migration
     {
         Schema::create('lesson_words', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('image');
-            $table->longText('description');
+            $table->integer('word_id');
+            $table->integer('lesson_id');
+            $table->integer('word_answer_id');
             $table->timestamps();
         });
     }

@@ -24,10 +24,8 @@ class CategoryCreateRequest extends Request
     public function rules()
     {
         return [
-            $config = config('common.category'),
             'name' => 'required|unique:categories,name',
             'description' => 'required',
-            'number' => "required|integer|min:{$config['number_min']}",
             'images' => 'required|mimes:jpeg,png',
         ];
     }
@@ -37,8 +35,6 @@ class CategoryCreateRequest extends Request
         return [
             'name.required' => trans('category/validations.name_required'),
             'name.unique'=> trans('category/validations.name_unique'),
-            'number.required' => trans('category/validations.number_required'),
-            'number.integer' => trans('category/validations.number_integer'),
             'number.min' => trans('category/validations.number_min'),
             'description.required' => trans('category/validations.description_required'),
             'images.required' => trans('category/validations.images_required'),

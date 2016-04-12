@@ -33,10 +33,6 @@
                 <textarea class="form-control" rows="4" name="description"> {{ $cateIdList['description'] }}</textarea>
             </div>
             <div class="form-group">
-                <label>{{ trans('category/titles.numberOfWordInLesson') }}</label>
-                <input class="form-control" name="number" value="{{ $cateIdList['number_of_word_lesson'] }}"/>
-            </div>
-            <div class="form-group">
                 <label>Image</label>
                 <img src="{{ asset("/uploads/category/{$cateIdList['image']}") }}" width="200" height="200">
             </div>

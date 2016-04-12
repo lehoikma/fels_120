@@ -85,7 +85,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> {{ trans('text.user') }}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ action('AdminController@getListUser') }}">{{ trans('user/titles.listUser') }}</a>

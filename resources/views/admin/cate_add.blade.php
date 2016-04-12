@@ -32,10 +32,6 @@
                 <label>{{ trans('labels.categoryDescription') }}</label>
                 <textarea class="form-control" rows="4" name="description"> {{ old('description') }} </textarea>
             </div>
-            <div class = "form-group">
-                <label>{{ trans('labels.numberOfWordInLesson') }}</label>
-                <input class = "form-control" name = "number" value = "{{ old('number') }}" />
-            </div>
             <div class="form-group">
                 <label>{{ trans('labels.image') }}</label>
                 <input type="file" name="images">

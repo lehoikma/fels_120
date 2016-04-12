@@ -33,7 +33,6 @@ class Category extends Model
         $newCategory->name = $categoryCreateInput['name'];
         $newCategory->image = $imageName;
         $newCategory->description = $categoryCreateInput['description'];
-        $newCategory->number_of_word_lesson = $categoryCreateInput['number'];
         return $newCategory->save();
     }
 
@@ -49,7 +48,6 @@ class Category extends Model
         }
         $listCatebyId->name = $name;
         $listCatebyId->description = $description;
-        $listCatebyId->number_of_word_lesson = $number;
         return $listCatebyId->save();
     }
 
