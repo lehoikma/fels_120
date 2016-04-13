@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Auth;
 
 class Word extends Model
 {
@@ -70,5 +71,20 @@ class Word extends Model
             ->orderByRaw("RAND()")
             ->take($config['take'])->get();
         return $words;
+    }
+
+    public function scopeIsLearned($query, $userId, $categoryId, $learnedCondition)
+    {
+        $config = config('common.lesson');
+        $query =  $query->where('words.category_id', $categoryId)
+            ->join('lesson_words', 'words.id', '=', 'lesson_words.word_id')
+            ->join('lessons', 'lessons.id', '=', 'lesson_words.lesson_id');
+        if ($learnedCondition == $config['conditionalLearned']) {
+            $query =  $query->where('lessons.user_id', '=',  $userId)
+                            ->groupBy('words.id');
+        } else {
+            $query =  $query->where('lessons.user_id', '!=',  $userId);
+        }
+        return  $query->get();
     }
 }

@@ -1,4 +1,4 @@
-/* 
+/*
 	Reset CSS
 */
 
@@ -11,8 +11,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -23,7 +23,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -112,4 +112,29 @@ table {
 }
 .click-button {
 	margin-top:10px;
+}
+.btn-home {
+	background: #5CB85C;
+	height: 40px;
+	border-radius: 15px;
+	text-decoration: none;
+	padding: 10px;
+	color: white;
+	font-size: 20px;
+	margin-left: 100px;
+}
+.btn-home:hover {
+	text-decoration: none;
+	color:dimgrey;
+}
+.button-home {
+	margin-top: 30px;
+}
+#wrapper-home {
+	background: white;
+	margin-top: 40px;
+}
+.title-home {
+	font-size: 30px;
+	font-weight: bold;
 }

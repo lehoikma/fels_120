@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LessonCreateRequest;
+use App\Http\Requests\LessonEditRequest;
 use App\Models\Category;
 use App\Models\Lesson;
 use App\Models\LessonWord;

@@ -44,4 +44,10 @@ return [
     'wordAnswer' => 'WordAnswer',
     'wordCorrect' => 'WordCorrect',
     'wordResult' => 'WordResult',
+    'activity' => 'Activity',
+    'conditionalAll' => '1',
+    'conditionalNotLearned' => '2',
+    'conditionalLearned' => '3',
+    'category' => 'Category',
 ];
+

@@ -11,6 +11,8 @@ return [
     ],
     'lesson' => [
         'take' => 10,
-        'word_answer_id' => 1,
+        'conditionalAll' => 3,
+        'conditionalNotLearned' => 2,
+        'conditionalLearned' => 1,
     ]
 ];
